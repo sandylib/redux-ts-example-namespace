@@ -1,0 +1,56 @@
+{
+  "name": "new-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "check": "npx eslint src --ext .js,.ts,.tsx && npx stylelint 'src/**/*.*css' && npx prettier --check .",
+    "eject": "react-scripts eject",
+    "fix": "npx eslint src --ext .js,.ts,.tsx --fix && npx stylelint 'src/**/*.*css' --fix && npx prettier --write .",
+    "pr": "npm run fix && npm run test:coverage",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:coverage": "react-scripts test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.19.7",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.10",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "bootstrap": "^4.5.3",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
+    "prettier-stylelint": "^0.4.2",
+    "pretty-format": "^26.4.2",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "typescript": "^4.1.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

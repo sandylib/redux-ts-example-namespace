@@ -1,0 +1,8 @@
+/.git
+/.idea
+/.vscode
+/build
+/coverage
+/node_modules
+/src/bootstrap
+package-lock.json
