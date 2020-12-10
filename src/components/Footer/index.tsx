@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css';
+import style from './style.module.css';
 import classNames from 'classnames';
 import { TodoModel } from '../../models';
 
@@ -11,20 +11,12 @@ export const FILTER_TITLES = {
 
 export declare namespace Footer {
   export interface Props {
-    filter: TodoModel.Filter;
     activeCount?: number;
-    completedCount?: number;
-    onClickFilter: (filter: TodoModel.Filter) => any;
-    onClickClearCompleted: () => any;
   }
 }
 
 export const Footer = ({
-  filter,
-  activeCount,
-  completedCount,
-  onClickFilter,
-  onClickClearCompleted
+  activeCount
 }: Footer.Props): JSX.Element => {
   const renderTodoCount = React.useCallback((): JSX.Element => {
     const itemWord = activeCount === 1 ? ' item' : 'items';
@@ -35,37 +27,11 @@ export const Footer = ({
     );
   }, [activeCount]);
 
-  const renderFilterLink = React.useCallback(
-    (selectedFilter: TodoModel.Filter): JSX.Element => {
-      return (
-         // eslint-disable-next-line
-        <a
-          className={classNames({ [style.selected]: filter === selectedFilter })}
-          style={{ cursor: 'pointer' }}
-          onClick={() => onClickFilter(selectedFilter)}
-          children={FILTER_TITLES[selectedFilter]}
-          href="javascript:void(0)"
-        />
-      );
-    },
-    [filter, onClickFilter]
-  );
-
-  const renderClearButton = React.useCallback((): JSX.Element | void => {
-    if (completedCount! > 0) {
-      return <button className={style.clearCompleted} onClick={onClickClearCompleted} children={'Clear completed'} />;
-    }
-  }, [completedCount]);
 
   return (
     <footer className={style.normal}>
       {renderTodoCount()}
-      <ul className={style.filters}>
-        {(Object.keys(TodoModel.Filter) as (keyof typeof TodoModel.Filter)[]).map((key) => (
-          <li key={key} children={renderFilterLink(TodoModel.Filter[key])} />
-        ))}
-      </ul>
-      {renderClearButton()}
+ 
     </footer>
   );
 };

@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router';
 import { Provider } from 'react-redux';
 import { configureStore } from './store';
 import {App as TodoApp} from './example/Todo'
-import Screens from './screens';
+// import Screens from './screens';
 
 
 const history = createBrowserHistory();
@@ -17,11 +17,10 @@ ReactDOM.render(
     <Provider store={store}>
      <Router history={history}>
         <Switch>
-            <Route path="/todo" component={TodoApp}/> 
+            <Route path="/" component={TodoApp}/> 
              
-            <Route path="/">
-              <Screens />
-            </Route>
+            {/* <Route path="/screen" component={Screens} /> */}
+              
           </Switch>
       </Router>
     </Provider>

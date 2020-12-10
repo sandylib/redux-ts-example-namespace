@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './style.css';
+import style from './style.module.css';
 import { RouteComponentProps } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTodoActions } from '../actions';
@@ -51,13 +51,7 @@ export const Todo = ({ history, location }: Todo.Props) => {
     <div className={style.normal}>
       <Header addTodo={todoActions.addTodo} />
       <TodoList todos={filteredTodos} actions={todoActions} />
-      <Footer
-        filter={filter}
-        activeCount={activeCount}
-        completedCount={completedCount}
-        onClickClearCompleted={handleClearCompleted}
-        onClickFilter={handleFilterChange}
-      />
+     
     </div>
   );
 };

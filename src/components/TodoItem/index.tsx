@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import style from './style.css';
+import style from './style.module.css';
 import { TodoModel } from '../../models';
 import { TodoActions } from '../../actions';
 import { TodoTextInput } from '../TodoTextInput';
