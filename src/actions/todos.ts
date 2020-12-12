@@ -24,5 +24,5 @@ export namespace TodoActions {
 export type TodoActions = Omit<typeof TodoActions, 'Type'>;
 export const useTodoActions = (dispatch: Dispatch) => {
   const { Type, ...actions } = TodoActions;
-  return useMemo(() => bindActionCreators(actions as any, dispatch), [dispatch]) as TodoActions;
+  return useMemo(() => bindActionCreators(actions as any, dispatch), [dispatch, actions]) as TodoActions;
 };

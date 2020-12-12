@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './style.module.css';
-import classNames from 'classnames';
 import { TodoModel } from '../../models';
 
 export const FILTER_TITLES = {
