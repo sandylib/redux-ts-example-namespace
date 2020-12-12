@@ -12,7 +12,7 @@ export declare namespace TodoList {
 }
 
 export const TodoList = ({ todos, actions }: TodoList.Props): JSX.Element => {
-  const hasIncompleted = React.useMemo(() => todos.some((todo) => !todo.completed), []);
+  const hasIncompleted = React.useMemo(() => todos.some((todo) => !todo.completed), [todos]);
   return (
     <section className={style.main}>
       {hasIncompleted && (

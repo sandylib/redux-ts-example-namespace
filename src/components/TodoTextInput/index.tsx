@@ -20,7 +20,7 @@ export const TodoTextInput = ({ placeholder, newTodo, onSave }: TodoTextInput.Pr
   const handleSubmit = React.useCallback(
     (event: React.KeyboardEvent<HTMLInputElement>) => {
       const text = event.currentTarget.value.trim();
-      if (event.which === 13) {
+      if (event.key === 'Enter') {
         onSave(text);
         setInputText('');
       }
@@ -42,7 +42,7 @@ export const TodoTextInput = ({ placeholder, newTodo, onSave }: TodoTextInput.Pr
         onSave(text);
       }
     },
-    [onSave]
+    [onSave, newTodo]
   );
 
   const classes = classNames(
